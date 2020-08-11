@@ -5,6 +5,8 @@ package goutil
 // go: creating new go.mod: module github.com/jobgeodev/golang
 
 import (
+	"bytes"
+	"encoding/binary"
 	"io/ioutil"
 	"log"
 	"net/http"
@@ -61,4 +63,30 @@ func SendRequest(is_post bool, url string, body_text string) ([]byte, error) {
 		log.Printf("http.Do failed,[StatusCode=%d] [err=%s][url=%s]", resp.StatusCode, err, url)
 	}
 	return b, err
+}
+
+// 使用BigEndian方式将uint32转为Bytes
+func Uint32ToBytes(i uint32) []byte {
+	var buf = make([]byte, 4)
+	binary.BigEndian.PutUint32(buf, i)
+	return buf
+}
+
+// 使用BigEndian方式将Bytes转为uint32
+func BytesToUint32(buf []byte) uint32 {
+	return uint32(binary.BigEndian.Uint32(buf))
+}
+
+// 将多个Bytes合并成一个Bytes
+func BytesCombine(pBytes ...[]byte) []byte {
+	return bytes.Join(pBytes, []byte{})
+}
+
+func BuildCustomData(raw_data []byte) []byte {
+	len := len(raw_data)
+	len_data := Uint32ToBytes(uint32(len))
+
+	// 新数据 = 原数据长度[uint32 四个字节] + 原数据
+	custom_data := BytesCombine(len_data, raw_data)
+	return custom_data
 }
