@@ -1,6 +1,8 @@
 package main
 
 import (
+	"log"
+
 	goutil "github.com/jobgeodev/golang"
 )
 
@@ -20,4 +22,8 @@ import (
 
 func main() {
 	goutil.PostRequest("aa", "")
+
+	data := []byte("helloworld")
+	v1 := goutil.BuildCustomData(data)
+	log.Printf("[%v]->[%v]", data, v1)
 }
