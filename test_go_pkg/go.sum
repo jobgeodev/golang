@@ -2,3 +2,5 @@ github.com/jobgeodev/golang v0.0.0-20200729064543-015e63a6023f h1:MANsog06GB7QFu
 github.com/jobgeodev/golang v0.0.0-20200729064543-015e63a6023f/go.mod h1:IgYThqGY4DWeQvE/X7wXWlM7BwhImmTsAZMyh2DQpuw=
 github.com/jobgeodev/golang v0.0.0-20200811091826-72f6f1f69cb8 h1:aP0dIsD186qkdpM/OjE9lHOwieke8a41gViib5tghvo=
 github.com/jobgeodev/golang v0.0.0-20200811091826-72f6f1f69cb8/go.mod h1:IgYThqGY4DWeQvE/X7wXWlM7BwhImmTsAZMyh2DQpuw=
+github.com/jobgeodev/golang v0.0.0-20200811094326-5c915a64ff7d h1:7c9sfnvpvbekrGWZjq/Zv8oX7JhajUZacfgMPx6ECgY=
+github.com/jobgeodev/golang v0.0.0-20200811094326-5c915a64ff7d/go.mod h1:IgYThqGY4DWeQvE/X7wXWlM7BwhImmTsAZMyh2DQpuw=

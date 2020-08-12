@@ -21,6 +21,9 @@ import (
 // }
 
 func main() {
+
+	goutil.Hello()
+	goutil.Bye()
 	goutil.PostRequest("aa", "")
 
 	data := []byte("helloworld")
